@@ -32,9 +32,8 @@ if(trim($comments) == '') {
 	exit();
 }
 
-if(get_magic_quotes_gpc()) {
-	$comments = stripslashes($comments);
-}
+// No need to check for magic quotes as it is deprecated in PHP 7.0.0 and removed in PHP 8.0.0
+$comments = stripslashes($comments);
 
 
 // Configuration option.
